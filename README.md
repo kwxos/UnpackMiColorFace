@@ -8,7 +8,7 @@ Watchfaces unpacker utility for Xiaomi watches:
 - Xiaomi Mi Watch,
 - Xiaomi Mi Revolve,
 - Xiaomi Mi Revolve Active,
-- Xiaomi Watch Color 2
+- Xiaomi Watch Color 2 
 - Xiaomi Watch S1 (Chinese and Global)
 - Xiaomi Watch S1 Active
 - Xiaomi Watch S1 Pro,
