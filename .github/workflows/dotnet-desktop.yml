@@ -25,7 +25,9 @@ jobs:
       run: dotnet restore
 
     - name: Build the project
-      run: dotnet build --configuration Release
+      run: |
+        dotnet build ./UnpackMiColorFace/UnpackMiColorFace.csproj --configuration Release
+        dotnet publish ./UnpackMiColorFace/UnpackMiColorFace.csproj --configuration Release --output ./output
 
     - name: Publish the project
       run: dotnet publish --configuration Release --output ./output
