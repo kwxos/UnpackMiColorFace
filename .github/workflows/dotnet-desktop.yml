@@ -34,7 +34,7 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          output.tar.gz
+          UnpackMiColorFace.tar.gz
         tag_name: "UnpackMiColorFace"
         token: ${{ secrets.AA_TOKEN }}
         body: |
