@@ -16,19 +16,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v3
-      with:
-        dotnet-version: '7.x'
-
-    - name: Restore dependencies
-      run: dotnet restore ./UnpackMiColorFace.csproj
-
-    - name: Build the project
-      run: dotnet build ./UnpackMiColorFace.csproj --configuration Release
-
-    - name: Publish the project
-      run: dotnet publish ./UnpackMiColorFace.csproj --configuration Release --output ./output
+    - name: Build the project with MSBuild
+      run: |
+        msbuild UnpackMiColorFace.sln /t:Restore /p:Configuration=Release
+        msbuild UnpackMiColorFace.sln /t:Build /p:Configuration=Release /p:OutputPath=./output
 
     - name: Create GitHub Release
       id: create_release
