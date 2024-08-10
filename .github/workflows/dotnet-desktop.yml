@@ -26,10 +26,15 @@ jobs:
         dotnet msbuild UnpackMiColorFace.sln /t:Restore /p:Configuration=Release
         dotnet msbuild UnpackMiColorFace.sln /t:Build /p:Configuration=Release /p:OutputPath=./output
 
+    - name: 制作amzayoTheme.tar.gz
+      run: |
+        tar czf output.tar.gz output
+
     - name: Publish Release
-      uses: actions/upload-release-asset@v1
+      uses: softprops/action-gh-release@v1
       with:
-        asset_path: ./output
+        files: |
+          output.tar.gz
         tag_name: "nezhaTheme-page"
         token: ${{ secrets.AA_TOKEN }}
         body: |
